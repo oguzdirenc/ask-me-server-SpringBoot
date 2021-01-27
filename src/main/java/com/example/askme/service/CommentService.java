@@ -10,4 +10,5 @@ import java.util.List;
 public interface CommentService {
     List<Comment> getAllCommentsByPostId(Long id);
     Comment saveCommentsByPostId(Long id,Comment comment);
+
 }

@@ -1,5 +1,6 @@
 package com.example.askme.service;
 
+import com.example.askme.domain.Comment;
 import com.example.askme.domain.Post;
 import com.example.askme.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
@@ -34,5 +35,13 @@ public class PostServiceImpl implements PostService {
     @Override
     public Post savePost(Post post) {
         return postRepository.save(post);
+    }
+
+    @Override
+    public Post deleteCommentById(Long id) {
+        Post post = new Post();
+        postRepository.deleteById(id);
+        return post;
+
     }
 }

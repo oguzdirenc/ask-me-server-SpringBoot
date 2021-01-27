@@ -26,8 +26,8 @@ public class CommentController {
     public ResponseEntity<List<Comment>> getComments(@PathVariable Long id){
 
         return new ResponseEntity<>(commentService.getAllCommentsByPostId(id), HttpStatus.OK);
-
-
     }
+
+
 
 }

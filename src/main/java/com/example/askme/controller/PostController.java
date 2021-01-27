@@ -1,5 +1,6 @@
 package com.example.askme.controller;
 
+import com.example.askme.domain.Comment;
 import com.example.askme.domain.Post;
 import com.example.askme.service.PostService;
 import lombok.RequiredArgsConstructor;
@@ -32,5 +33,10 @@ public class PostController {
     @GetMapping("/post/{id}")
     public ResponseEntity<Post> showPost(@PathVariable Long id){
         return new ResponseEntity<>(postService.getById(id),HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Post>  deleteComments(@PathVariable Long id){
+        return new ResponseEntity<>(postService.deleteCommentById(id), HttpStatus.OK);
     }
 }
